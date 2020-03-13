@@ -8,6 +8,6 @@ COPY package-lock.json .
 RUN npm install 
 
 COPY cypress.json ./
-
+COPY cypress/ ./cypress/
 
 CMD ["./node_modules/.bin/cypress", "run", "--headless"]
