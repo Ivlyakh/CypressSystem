@@ -4,9 +4,9 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build --tag Cypress:latest .
+      - docker build --tag cypress:latest .
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Running the Docker image...
-      - docker run Cypress:latest
+      - docker run cypress:latest
