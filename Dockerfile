@@ -10,4 +10,5 @@ RUN npm install
 COPY cypress.json ./
 COPY cypress/ ./cypress/
 
-CMD ["./node_modules/.bin/cypress", "run", "--headless"]
+#CMD ["./node_modules/.bin/cypress", "run", "--headless"]
+CMD ["curl", "-s", "https://ipapi.co/json"]

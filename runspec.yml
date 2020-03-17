@@ -10,4 +10,6 @@ phases:
   post_build:
     commands:
       - echo Running the Docker image...
+      - export HTTP_PROXY="http://lum-customer-hl_3e04d11e-zone-static-country-gb:wobx3fw1htcl@zproxy.lum-superproxy.io:22225"
+      - export HTTPS_PROXY="http://lum-customer-hl_3e04d11e-zone-static-country-gb:wobx3fw1htcl@zproxy.lum-superproxy.io:22225"
       - docker run $COMMIT_HASH:latest
