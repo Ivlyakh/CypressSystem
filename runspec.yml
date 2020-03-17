@@ -11,7 +11,7 @@ phases:
     commands:
       - echo Running the Docker image...
       - echo HTTPS_PROXY=${HTTPS_PROXY} $COMMIT_HASH:latest
-      - docker run -e HTTPS_PROXY=$HTTPS_PROXY $COMMIT_HASH:latest
+      - docker run -e test $COMMIT_HASH:latest
 #      - export ${HTTP_PROXY}
 #      - export ${HTTPS_PROXY}
 #      - docker run $COMMIT_HASH:latest
