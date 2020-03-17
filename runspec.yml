@@ -10,7 +10,4 @@ phases:
   post_build:
     commands:
       - echo Running the Docker image...
-#      - export ${HTTP_PROXY}
-#      - export ${HTTPS_PROXY}
-#      - docker run $COMMIT_HASH:latest
       - docker run -e ${HTTPS_PROXY} $COMMIT_HASH:latest
