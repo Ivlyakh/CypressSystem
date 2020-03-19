@@ -9,9 +9,7 @@ phases:
       - docker build --tag $COMMIT_HASH:latest  .
   post_build:
     commands:
+      - echo POST-BUILD debug info
+      - aws s3 cp ${PROXY_LIST} proxy.list
       - echo Running the Docker image...
-      - echo HTTPS_PROXY=${PROXY} $COMMIT_HASH:latest
-      - docker run -e HTTPS_PROXY=${PROXY} -e HTTP_PROXY=${PROXY} $COMMIT_HASH:latest
-#      - export ${HTTP_PROXY}
-#      - export ${HTTPS_PROXY}
-#      - docker run $COMMIT_HASH:latest
+      - for i in $(cat proxy.list); do docker run -e HTTPS_PROXY=${i} -e HTTP_PROXY=${i} $COMMIT_HASH:latest; done

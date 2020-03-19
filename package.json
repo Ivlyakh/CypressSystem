@@ -1,6 +1,6 @@
 {
   "name": "cypresssystem",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CypressSystem",
   "main": "index.js",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/PerfectedApp/CypressSystem#readme",
   "dependencies": {
-    "cypress": "^4.1.0"
+    "cypress": "^4.2.0"
   }
 }
