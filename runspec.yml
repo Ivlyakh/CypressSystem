@@ -10,6 +10,8 @@ phases:
   post_build:
     commands:
       - echo POST-BUILD debug info
-      - aws s3 cp ${PROXY_LIST} proxy.list
+      #- aws s3 cp ${PROXY_LIST} proxy.list
+      - python --version
+      - python3 --version
       - echo Running the Docker image...
-      - for i in $(cat proxy.list); do docker run -e HTTPS_PROXY=${i} -e HTTP_PROXY=${i} $COMMIT_HASH:latest; done
+      #- for i in $(cat proxy.list); do docker run -e HTTPS_PROXY=${i} -e HTTP_PROXY=${i} $COMMIT_HASH:latest; done
